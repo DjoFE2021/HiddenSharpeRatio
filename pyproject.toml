@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "RMT"
+version = "0.1.0"
+description = "Random-matrix-theory confidence bounds on the maximal Sharpe ratio of many assets."
+authors = [
+    { name = "Chernov" },
+    { name = "Kelly" },
+    { name = "Malamud" },
+    { name = "Schwab" },
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.0",
+    "scipy",
+    "pandas",
+]
+
+[project.optional-dependencies]
+# RMT.portfolios (random-feature portfolios, residualisation) needs PyTorch
+portfolios = ["torch"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

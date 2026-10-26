@@ -1,0 +1,13 @@
+name: rmt
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2.0
+  - scipy
+  - pandas
+  - pytorch
+  - pytest
+  - pip
+  - pip:
+    - -e .
